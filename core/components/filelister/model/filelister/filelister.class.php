@@ -121,7 +121,7 @@ class FileLister {
         $path = $this->modx->stripTags($path);
         $path = str_replace(array('../','./'),'',$path);
         $path = str_replace('//','/',$path);
-        if (!$this->modx->getOption('filelister.allow_root_paths',$scriptProperties,true)) {
+        if (!$this->modx->getOption('filelister.allow_root_paths',null,true)) {
             $path = ltrim($path,'/');
         }
         return $path;
